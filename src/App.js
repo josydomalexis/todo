@@ -4,11 +4,10 @@ import './App.css';
 
 function App() {
 
-    const [list, setList] = useState(localStorage.getItem('list')?JSON.parse(localStorage.getItem('list')):[])
+    const localData = localStorage.getItem('list')?JSON.parse(localStorage.getItem('list')):[]
+
+    const [list, setList] = useState(localData)
     const input = useRef("");
-
-    // const localData = localStorage.getItem('list')?JSON.parse(localStorage.getItem('list')):[]
-
 
     const [searchQuery, setSearchQuery] = useState("")
 
